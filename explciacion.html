@@ -1,0 +1,23 @@
+<!--Ejemplo de un IIFE -->
+
+<div id="identificador_1">El siguiente número es la muestra de una variable global: </div><!-- Creacion de la sección donde se incluira una variable global la cual es el scope -->
+<div id="identificador_2">El siguiente número es la muestra de una variable local:</div> <!-- Creacion de la sección donde se incluira una variable local -->
+<div id="identificador_3">El siguiente número es la muestra de una variable fuera de alcance:</div><!-- Creacion de la sección donde se incluira una variable fuera de alcance -->
+
+<script> //Script donde se añadira codigo el cual mostrara los valroes indicados arriba
+	var global = 900; //declaración de la variable global que es el scope con un valor igual a 900
+	unafuncion(); //declaracion de una funcion para la implementacion
+	otrafuncion(); // declaracion de otra funcion
+	funciontres(); // declaracion de una tercera funcion
+	function unafuncion(){ // implementacion de la funcion unafuncion()
+		document.getElementById("identificador_1").innerHTML += global; //Modificación de la etiqueta con id "identificador_1" y se despliegue el valor guardado en global
+	}//fin de unafuncion()
+	function otrafuncion(){ // implementacion de la funcion otrafuncion()
+		var local_de_dos = 500; // declaracion de una variable local con el nombre local_de_dos y un valor de 500
+		document.getElementById("identificador_2").innerHTML += local_de_dos; //Modificación de la etiqueta con id "identificador_2" la cual mostrara el valor dentro de local_de_dos que es 500
+	}// fin de  otrafuncion()
+	function funciontres(){// implementacion de la funcion funciontres()
+		document.getElementById("identificador_3").innerHTML += local_de_dos; /*Modificación de la etiqueta con id "identificador_3" en donde tratara de mostrar el valor de la variable local utilizada
+		en otrafuncion() pero al no estar dentro del rango de funciontres()no mostrará nada*/
+	} // fin de funciontres()
+</script> <!-- fin del Script -->
